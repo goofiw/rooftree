@@ -1,5 +1,7 @@
 class Movie < ActiveRecord::Base
 
+	has_many :reviews
+
 validates :title,
   presence: true
 
@@ -20,6 +22,10 @@ validates :release_date,
 
 validate :release_date_is_in_the_future
 
+def review_average
+	reviews.sum(:rating_out_of_ten)/reviews.size
+end
+
 protected
 
 def release_date_is_in_the_future
@@ -27,5 +33,5 @@ def release_date_is_in_the_future
     errors.add(:release_date, "should probably be in the future") if release_date < Date.today
   end
 end
-      
+
 end
