@@ -47,12 +47,8 @@
 
     def movie_params
       params.require(:movie).permit(
-        :title, :release_date, :director, :runtime_in_minutes, :poster_image_url, :description
+        :title, :release_date, :director, :runtime_in_minutes, :remote_image_url, :description, :poster_image, :remote_poster_image_url
       )
     end
 
-	  def location_params
-	  	params.permit(:image, :remote_url)
-	  end
-
-    end
+end

@@ -1,5 +1,5 @@
 class Movie < ActiveRecord::Base
-  mount_uploader :poster_image_url, ImageUploader
+  mount_uploader :poster_image, ImageUploader
   
 	has_one :poster
 	has_many :reviews
