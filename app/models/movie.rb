@@ -1,5 +1,7 @@
 class Movie < ActiveRecord::Base
-
+  mount_uploader :poster_image_url, ImageUploader
+  
+	has_one :poster
 	has_many :reviews
 
 validates :title,
@@ -14,13 +16,10 @@ validates :runtime_in_minutes,
 validates :description,
   presence: true
 
-validates :poster_image_url,
-  presence: true
-
 validates :release_date,
   presence: true
 
-validate :release_date_is_in_the_future
+validate :release_date_is_in_the_future, :file_or_url
 
 def review_average
 	reviews.sum(:rating_out_of_ten)/reviews.size
@@ -31,6 +30,12 @@ protected
 def release_date_is_in_the_future
   if release_date.present?
     errors.add(:release_date, "should probably be in the future") if release_date < Date.today
+  end
+end
+
+def file_or_url
+  if :url == nil && :title == nil
+    errors.add(:no_image, "Please provide a URL or upload a file")
   end
 end
 

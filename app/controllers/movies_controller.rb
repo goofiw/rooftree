@@ -22,7 +22,6 @@
         if @movie.save
           redirect_to movies_path, notice: "#{@movie.title} was submitted successfully!"
         else
-        else
           render :new
         end
       end
@@ -42,13 +41,18 @@
         @movie.destroy
         redirect_to movies_path
       end
+  
 
-      protected
+    protected
 
-      def movie_params
-        params.require(:movie).permit(
-          :title, :release_date, :director, :runtime_in_minutes, :poster_image_url, :description
-        )
-      end
+    def movie_params
+      params.require(:movie).permit(
+        :title, :release_date, :director, :runtime_in_minutes, :poster_image_url, :description
+      )
+    end
+
+	  def location_params
+	  	params.permit(:image, :remote_url)
+	  end
 
     end
