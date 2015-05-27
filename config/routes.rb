@@ -1,4 +1,8 @@
 RottenMangoes::Application.routes.draw do
+  namespace :admin do
+  
+  end
+
   get 'reviews/new'
 
   get 'reviews/create'
@@ -21,9 +25,6 @@ RottenMangoes::Application.routes.draw do
 
   root to: 'movies#index'
 
-  namespace :admin do
-    resources :movies, :users
-  end
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
