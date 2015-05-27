@@ -2,11 +2,8 @@
 <%= link_to "Submit a movie!", new_movie_path %>
 <hr>
 <% @movies.each do |movie| %>
-<!--   <%= link_to image_tag(movie.poster_image_url(:thumb)), movie_path(movie) %> -->
 <% if movie.poster_image? %>
 	<%= image_tag movie.poster_image_url(:thumb) %>
-<% else %>
-	<%= image_tag movie.remote_poster_image_url(:thumb)  %>	
 <% end %>
   <h2><%= link_to movie.title, movie_path(movie) %></h2>
   <h3><%= movie.release_date %></h3>
