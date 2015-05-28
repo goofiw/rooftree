@@ -2,13 +2,5 @@
 <%= link_to "Submit a movie!", new_movie_path %>
 <hr>
 
-<% search.each do |movie| %>
-<% if movie.poster_image? %>
-	<%= image_tag movie.poster_image_url(:thumb) %>
-<% end %>
-  <h2><%= link_to movie.title, movie_path(movie) %></h2>
-  <h3><%= movie.release_date %></h3>
-  <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
-  <p><%= movie.description %></p>
-  <hr>
-<% end %>
+<%= paginate @movies %>
+<%= render partial: "movie", collection: @movies %>

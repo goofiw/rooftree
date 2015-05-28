@@ -1,7 +1,8 @@
     class MoviesController < ApplicationController
 
       def index
-        @movies = Movie.all
+        
+        @movies = Movie.load_movies(params)
       end
 
       def show
