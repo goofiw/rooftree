@@ -8,5 +8,6 @@
   <h4>email: <%= user.email %></h4>
   <p>Creation: <%= user.created_at %></p>
   <p>Admin Status: <%= user.admin %></p>
+  <%= link_to "delete", user, method: :delete, data: {confirm: "confirm?" } %>
   <hr>
 <% end %>
