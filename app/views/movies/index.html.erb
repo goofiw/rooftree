@@ -2,5 +2,10 @@
 <%= link_to "Submit a movie!", new_movie_path %>
 <hr>
 
+
 <%= paginate @movies %>
-<%= render partial: "movie", collection: @movies %>
+
+<%= render @movies %>
+
+
+  

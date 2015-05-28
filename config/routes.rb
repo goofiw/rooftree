@@ -22,7 +22,7 @@ RottenMangoes::Application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
 
-  resources :users, only: [:new, :create, :destroy]
+  resources :users, only: [:new, :create, :destroy, :show]
 
   resource :session, only: [:new, :create, :destroy]
 

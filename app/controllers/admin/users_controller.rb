@@ -4,5 +4,6 @@ class Admin::UsersController < Admin::DashboardController
 	    @users = User.all.page(params[:page]).per(1)
   end
 
+
   
 end
