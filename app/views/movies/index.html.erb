@@ -1,7 +1,8 @@
 <h1>Rotten Mangoes</h1>
 <%= link_to "Submit a movie!", new_movie_path %>
 <hr>
-<% @movies.each do |movie| %>
+
+<% search.each do |movie| %>
 <% if movie.poster_image? %>
 	<%= image_tag movie.poster_image_url(:thumb) %>
 <% end %>

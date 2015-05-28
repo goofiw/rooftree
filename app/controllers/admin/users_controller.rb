@@ -1,7 +1,6 @@
-class Admin::UsersController < ApplicationController
+class Admin::UsersController < Admin::DashboardController
 
 	def index
-		  restrict_access_to_admin
 	    @users = User.all.page(params[:page]).per(1)
   end
 end
