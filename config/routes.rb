@@ -1,7 +1,7 @@
 RottenMangoes::Application.routes.draw do
   namespace :admin do
-    resources :dashboard
-    resources :users
+    resources :dashboard, only: [:index, :show]
+    resources :users, only: [:index, :show, :destroy]
   end
 
   get 'reviews/new'
