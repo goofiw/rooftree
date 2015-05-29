@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	has_one :reviews
+	has_many :reviews
   
   after_destroy :notify_deletion
 
@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 		"#{firstname} #{lastname}"
 	end
 
-	def notify_deletion
-    
-	end
+  def get_reviews
+    reviews.all
+  end
 end

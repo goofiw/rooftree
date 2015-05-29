@@ -1,5 +1,6 @@
 class Movie < ActiveRecord::Base
   mount_uploader :poster_image, ImageUploader
+  has_many :reviews
 
   scope :load_movies, ->(params) {
     title = params[:title]

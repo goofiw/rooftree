@@ -30,7 +30,9 @@ gem "rmagick", :require => 'RMagick'
 gem 'carrierwave'
 
 gem 'kaminari'
+gem 'rails-api'
 
+gem 'bootstrap-sass'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
