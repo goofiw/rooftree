@@ -1,5 +1,5 @@
 
-<h2>Movie: <%= link_to review.movie.title, movie_path(review.movie) %></h2>
+<h2>Movie: <%= link_to Movie.find(review.movie_id).title, movie_path(review.movie) %></h2>
 
 <h3>Review:</h3>
 <p><%= review.text %>

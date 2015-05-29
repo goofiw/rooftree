@@ -1,6 +1,8 @@
 class Movie < ActiveRecord::Base
   mount_uploader :poster_image, ImageUploader
-  has_many :reviews
+  
+
+  has_many :reviews, dependent: :destroy
 
   scope :load_movies, ->(params) {
     title = params[:title]
@@ -26,8 +28,6 @@ class Movie < ActiveRecord::Base
   } 
     
 
-  
-	has_one :poster
 	has_many :reviews
 
   validates :title,
