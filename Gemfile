@@ -9,6 +9,8 @@ if !ENV['RAILS_ENV'] == 'production'
 end
 #postrgres used for heroku
 gem 'pg'
+#fix for heroku
+gem 'rails_12factor'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
