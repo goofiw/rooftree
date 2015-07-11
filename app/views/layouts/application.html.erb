@@ -8,12 +8,13 @@
 </head>
 <body>
 
-<% render 'layouts/header' %>
+
 
 <% flash.each do |key, value| %>
   <%= content_tag(:div, value) %>
 <% end %>
 <div class="spaced">
+	<%= render 'layouts/header' %>
 	<%= render 'movies/search' %>
 </div>
 <%= yield %>

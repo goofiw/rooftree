@@ -11,34 +11,24 @@
     </div>
   <% end %>
 
-  <div>
-    <%= f.label "title" %><br>
-    <%= f.text_field "title" %>
-  </div>
-  <div>
-    <%= f.label "release_date" %><br>
-    <%= f.date_field "release_date" %>
-  </div>
-  <div>
-    <%= f.label "director" %><br>
-    <%= f.text_field "director" %>
-  </div>
-  <div>
-    <%= f.label "runtime_in_minutes" %><br>
-    <%= f.number_field "runtime_in_minutes" %>
-  </div>
-  <div>
-    <%= f.label :remote_poster_image_url, "or image URL" %><br>
+
+    <%= f.text_field :title, value: 'ex. Pirates II' %>
+
+    <%= f.date_field :release_date, value: 'ex. 12/12/1942' %>
+
+  
+    <%= f.text_field :director, value: 'ex. Huge Heffner' %>
+
+
+    <%= f.number_field :runtime_in_minutes, value: 'ex. 93', label: "Runtime in Minutes" %>
+
     <%= f.text_field :remote_poster_image_url %>
-  </div>
-  <div>
-    <%= f.file_field :poster_image %><br>
-  </div>
-  <div>
-    <%= f.label "description" %><br>
-    <%= f.text_area "description" %>
-  </div>
-  <div>
-    <%= f.submit "Submit" %> 
-  </div>
+
+    <%= f.file_field :poster_image, label: 'Or upload your own image' %>
+
+
+    <%= f.text_area :description %>
+
+    <%= f.submit 'Submit' %> 
+
 <% end %>

@@ -1,20 +1,21 @@
 
-	<%= form_tag(movies_path, method: "get", class: "form-inline") do %>
-	  <%= label_tag(:title, "Title:") %>
-	  <%= text_field_tag(:title) %>
+	<div class='text-center'>
+		<%= form_tag(movies_path, method: "get", class: "form-inline") do %>
+		  <%= label_tag(:title, "Title:") %>
+		  <%= text_field_tag(:title) %>
 
-	  <%= label_tag(:director, "Director:") %>
-	  <%= text_field_tag(:director) %>
+		  <%= label_tag(:director, "Director:") %>
+		  <%= text_field_tag(:director) %>
 
-	  <%= label_tag(:length_in_minutes, "Length:") %>
-	  <%= select_tag(:length_in_minutes, options_for_select([[],["Less than 90 minutes", 0], ["Between 90 and 120 minutes", 1], ["Over 120 minutes", 2]])) %>
+		  <%= label_tag(:length_in_minutes, "Length:") %>
+		  <%= select_tag(:length_in_minutes, options_for_select([[],["Less than 90 minutes", 0], ["Between 90 and 120 minutes", 1], ["Over 120 minutes", 2]])) %>
 
-	  <%= submit_tag("Search", class: "btn btn-default") %>
-	  <br/>
-    <ul class='list-inline'>
-	  <li><%= link_to "Back to all movies", movies_path, class: "submit_back" %><br/></li>
+		  <%= submit_tag("Search", class: "btn btn-default") %>
+		  <br/>
+	    <ul class='list-inline'>
+		  <li><%= link_to "Back to all movies", movies_path, class: "submit_back" %><br/></li>
 
-	  <li><%= link_to "Submit a movie!", new_movie_path, class: 'submit_back' %></li>
-	  </ul>
-	<% end %>
-
+		  <li><%= link_to "Submit a movie!", new_movie_path, class: 'submit_back' %></li>
+		  </ul>
+		<% end %>
+</div>
