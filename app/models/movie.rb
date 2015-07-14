@@ -45,14 +45,14 @@ class Movie < ActiveRecord::Base
   validates :release_date,
     presence: true
 
-  validate :release_date_is_in_the_future, :file_or_url
+  validate :file_or_url
 
   def review_average
   	reviews.sum(:rating_out_of_ten)/reviews.size
   end
 
   protected
-
+#not used
   def release_date_is_in_the_future
     if release_date.present?
       errors.add(:release_date, "should probably be in the future") if release_date < Date.today
