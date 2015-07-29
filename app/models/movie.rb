@@ -17,9 +17,10 @@ class Movie < ActiveRecord::Base
     matched = Movie
     if !length.blank? || !title.blank? || !director.blank?
       matched = matched.where("runtime_in_minutes #{length}") if !length.blank? 
-      matched = matched.where("title LIKE ?", title) if !title.blank?
+      matched = matched.where("title ilike ?", "%#{title}%") if !title.blank?
       matched = matched.where("director LIKE ?", director) if !director.blank?
       matched = matched.page(params[:page]).per(5)
+      title = ''
     else
       matched = Movie.page(params[:page]).per(5)
     end
