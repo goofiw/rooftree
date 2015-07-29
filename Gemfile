@@ -34,6 +34,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem "rmagick", :require => 'RMagick'
 gem 'carrierwave'
+gem 'fog', '~> 1.3.1'
 
 gem 'kaminari'
 
