@@ -34,6 +34,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem "rmagick", :require => 'RMagick'
 gem 'carrierwave'
+gem 'fog'
 gem 'fog-aws'
 gem 'nokogiri', '~>1.6.2'
 
